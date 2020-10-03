@@ -29,11 +29,13 @@ const client = new Discord.Client();
 let ranking;
 
 fs.readFile("./rankings/latest.ranking", 'utf-8', (_err, data) => {
-	ranking = JSON.parse(data);
+	if (data) {
+		ranking = JSON.parse(data);
+	}
 })
 
 
-ranking = ranking ? ranking : [];
+ranking = ranking ? ranking : {};
 
 client.login(process.env.BOT_TOKEN);
 
