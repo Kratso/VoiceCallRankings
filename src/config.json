@@ -1,0 +1,10 @@
+{
+	"BOT_TOKEN": "",
+	"save_mode": "all",
+	"save_timer": "43200000",
+	"show_ranking_command_alias": [
+		"?showRanking",
+		"?ranking",
+		"?topCallers"
+	]
+}
