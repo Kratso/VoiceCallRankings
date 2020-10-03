@@ -6,5 +6,18 @@
 		"?showRanking",
 		"?ranking",
 		"?topCallers"
+	],
+	"save_current_ranking_alias": [
+		"?saveranking",
+		"?save"
+	],
+	"own_fetch_alias": [
+		"?time",
+		"?uptime",
+		"?own"
+	],
+	"other_fetch_alias": [
+		"?lookup",
+		"?fetch"
 	]
 }
