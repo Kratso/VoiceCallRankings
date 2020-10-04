@@ -76,12 +76,14 @@ const saveMemory = (data) => {
 	);
 }
 
-console.log("post-login")
 client.on("ready", () => {
 	console.log("Ready!");
-	Object.keys(ranking[Object.keys(ranking)[0]]).forEach((userId) => {
-		users[userId] = new TimeKeeper(userId, ranking[Object.keys(ranking)[0]][userId])
-	})
+	if (Object.keys(ranking).length > 0) {
+		Object.keys(ranking[Object.keys(ranking)[0]]).forEach((userId) => {
+			users[userId] = new TimeKeeper(userId, ranking[Object.keys(ranking)[0]][userId])
+		})
+	}
+
 	setInterval(() => {
 		saveMemory(data)
 	}, config.save_timer);
