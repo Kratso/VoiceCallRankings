@@ -10,7 +10,7 @@ class TimeKeeper {
 	}
 
 	endRecord(end) {
-		if (start !== 0) {
+		if (this.start !== 0) {
 			this.totalTime = this.totalTime + end - this.start;
 			this.start = 0;
 
