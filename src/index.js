@@ -29,17 +29,17 @@ let ranking;
 
 const users = [];
 
+
 fs.readFile("./rankings/latest.ranking", "utf-8", (_err, data) => {
 	if (data) {
 		ranking = JSON.parse(data);
-		client.login(process.env.BOT_TOKEN);
 	}
 });
 
+client.login(process.env.BOT_TOKEN);
+
+
 ranking = ranking ? ranking : {};
-
-
-
 
 
 
@@ -76,6 +76,7 @@ const saveMemory = (data) => {
 	);
 }
 
+console.log("post-login")
 client.on("ready", () => {
 	console.log("Ready!");
 	Object.keys(ranking[Object.keys(ranking)[0]]).forEach((userId) => {
