@@ -10,11 +10,14 @@ class TimeKeeper {
 	}
 
 	endRecord(end) {
-		console.log(this.start, end, end - this.start)
-		this.totalTime = this.totalTime + end - this.start;
-		this.start = 0;
+		if (start !== 0) {
+			this.totalTime = this.totalTime + end - this.start;
+			this.start = 0;
 
-		return this.totalTime;
+			return this.totalTime;
+		}
+		this.start = end;
+		return 0;
 	}
 }
 
@@ -22,6 +25,9 @@ const fs = require("fs");
 
 const Discord = require("discord.js");
 const config = require("./config.json");
+const {
+	runInThisContext
+} = require("vm");
 
 const client = new Discord.Client();
 
